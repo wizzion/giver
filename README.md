@@ -1,6 +1,8 @@
 # POODL / old book barter demo
 
-This Demo Telegram MiniApp showcases the integration with [@tonconnect/ui-react](https://www.npmjs.com/package/@tonconnect/ui-react) and simple execution of old book shopping with TON POODL tokens.
+This Demo Telegram MiniApp showcases the integration with [@tonconnect/ui-react](https://www.npmjs.com/package/@tonconnect/ui-react) and simple execution of old book shopping with TON MainNet POODL tokens.
+
+Feel free to test it in Telegram's [@giver_eu_bot/antik][https://t.me/giver_eu_bot/antik] MiniApp. 
 
 ## Differences
 Main changes to original [tma-usdt-payments-demo](https://github.com/ton-community/tma-usdt-payments-demo) are:
@@ -111,4 +113,7 @@ Here is a sample configuration for specifying a return URL:
     }}
 ></TonConnectUIProvider>
 ```
+# Interested ?
+
+Also join the [@giver_eu Telegram group][https://t.me/giver_eu] to get info about future POODL airdrops and/or info about where & how You can pick up Your well-deserved bookz.
 
