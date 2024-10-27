@@ -1,8 +1,13 @@
-# POODL / old book barter demo
+<p align="center">
+  <img src="https://giver.eu/antik/avatar.jpg" alt="Demo Picture 2" width="240"/>
+  <img src="https://giver.eu/antik/bookz.jpg" alt="Demo Picture 1" width="240"/>
+</p>
 
-This Demo Telegram MiniApp showcases the integration with [@tonconnect/ui-react](https://www.npmjs.com/package/@tonconnect/ui-react) and simple execution of old book shopping with TON MainNet POODL tokens.
+# Giver.eu :: crypto / old book barter demo
 
-Feel free to test it in Telegram's [@giver_eu_bot/antik][https://t.me/giver_eu_bot/antik] MiniApp. 
+This Demo Telegram MiniApp showcases the integration with [@tonconnect/ui-react](https://www.npmjs.com/package/@tonconnect/ui-react) and simple execution of old book shopping with TON MainNet [POODL](https://tonscan.org/jetton/EQBRKQPsq5ADeqOKu47IA5dTnXWcn-V5GX2xcj-imZ3US5eC#holders) tokens.
+
+Feel free to test it in Telegram's [@giver_eu_bot/antik](https://t.me/giver_eu_bot/antik) MiniApp. 
 
 ## Differences
 Main changes to original [tma-usdt-payments-demo](https://github.com/ton-community/tma-usdt-payments-demo) are:
