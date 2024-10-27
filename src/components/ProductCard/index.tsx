@@ -1,33 +1,36 @@
 import { TProduct } from '@/types/common-types.ts';
-import Button from '@/components/Button';
+import { useAppState } from '@/context/app-context.tsx';
 import styles from './styles.module.scss';
-import { MinusIcon, PlusIcon } from '@/constants/icons.tsx';
 
 type Props = {
   product: TProduct;
-  onAddProduct: (product: TProduct) => void;
-  onRemoveProduct: (product: TProduct) => void;
 }
 
-const ProductCard = ({ product, onAddProduct, onRemoveProduct }: Props) => {
-  const { image, shortName, description, quantity, price } = product;
+const ProductCard = ({ product }: Props) => {
+  const { cart, addProduct, removeProduct } = useAppState();
+  const { id, image, name, description, price } = product;
+
+  // Determine if the product is in the cart
+  const isInCart = id in cart;
+
+  // Handle click to toggle product in the cart
+  const handleClick = () => {
+    if (isInCart) {
+      removeProduct(product);
+    } else {
+      addProduct(product);
+    }
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${isInCart ? styles.selected : ''}`} onClick={handleClick}>
       <div className={styles.content}>
-        <img className={styles.image} src={image} alt={shortName} />
-        <h5>{shortName}</h5>
-        <p>${price}</p>
+        <h5>{name}</h5>
+        <img className={styles.image} src={image} alt={name} />
+        <p>{price} <img className={styles.poodlImage} src="https://giver.eu/antik/poodl.webp" alt="POODL" /></p>
         <p className={styles.description}>{description}</p>
       </div>
-      {!quantity ? (
-        <Button onClick={() => onAddProduct(product)}>Add to cart</Button>
-      ) : (
-        <div className={styles.controls}>
-          <Button className={styles.button} onClick={() => onRemoveProduct(product)}><MinusIcon /></Button>
-          <div className={styles.quantity}>{quantity}</div>
-          <Button className={styles.button} onClick={() => onAddProduct(product)}><PlusIcon /></Button>
-        </div>
-      )}
+      {isInCart && <div className={styles.inCartLabel}>In Cart</div>}
     </div>
   );
 };

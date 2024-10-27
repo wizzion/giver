@@ -1,8 +1,8 @@
 export const separateTonAddress = (address: string) => `${address.slice(0, 4)}...${address.slice(-4)}`;
 
-export const calculateUsdtAmount = (usdCents: number) => BigInt(usdCents * 10000);
+export const calculatePOODLAmount = (POODLCents: number) => BigInt(POODLCents);
 
-export const calculateUsdFromUsdt = (usdtAmount: bigint) => Math.round((Number(usdtAmount) / 1000000) * 100) / 100;
+export const calculatePOODLFromPOODL = (POODLAmount: bigint) => Math.round((Number(POODLAmount) / 1000000) * 100) / 100;
 
 export const isUUID = (uuid: string): boolean => uuid.match('^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$') !== null;
 

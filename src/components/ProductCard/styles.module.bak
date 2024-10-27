@@ -1,5 +1,4 @@
 @import 'src/assets/styles/helpers/all';
-@import 'src/assets/styles/helpers/colors';
 
 .card {
   background-color: $neutral800;
@@ -11,11 +10,6 @@
   justify-content: space-between;
   gap: 8px;
   width: 140px;
-  cursor: pointer; // To indicate it's clickable
-
-  &.selected {
-    border: 2px solid $primary600; // Highlight if selected
-  }
 
   .content {
     display: flex;
@@ -38,15 +32,22 @@
     @include caption($neutral400);
   }
 
-  .poodlImage {
-    width: 25px;
-    height: 25px;
-  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
 
-  .inCartLabel {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: $success600;
+    .button {
+      padding: 6px;
+    }
+
+    .quantity {
+      @include subtitle-l();
+      text-align: center;
+      width: 24px;
+    }
   }
 }
+
 

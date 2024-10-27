@@ -2,12 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { JettonMaster, TonClient, Transaction } from '@ton/ton';
 import { Address } from '@ton/core';
 import { isUUID } from '@/helpers/common-helpers.ts';
-import { UsdtTransaction } from '@/types/usdt-transaction.ts';
+import { POODLTransaction } from '@/types/POODL-transaction.ts';
 import { AccountSubscriptionService } from '@/services/account-subscription.service.ts';
-import { INVOICE_WALLET_ADDRESS, USDT_MASTER_ADDRESS } from '@/constants/common-constants.ts';
+import { INVOICE_WALLET_ADDRESS, POODL_MASTER_ADDRESS } from '@/constants/common-constants.ts';
 import { useTonConnect } from '@/hooks/useTonConnect.ts';
 
-function parseUsdtPayload(tx: Transaction): UsdtTransaction | undefined {
+function parsePOODLPayload(tx: Transaction): POODLTransaction | undefined {
 
   try {
     if (tx.inMessage?.info.type !== 'internal' || tx.description.type !== 'generic' || tx.description.computePhase?.type !== 'vm') {
@@ -45,7 +45,7 @@ function parseUsdtPayload(tx: Transaction): UsdtTransaction | undefined {
     return {
       status: tx.description.computePhase.success ? 'succeeded' : 'failed',
       hash: tx.hash().toString('hex'),
-      usdtAmount: jettonAmount,
+      POODLAmount: jettonAmount,
       gasUsed: tx.totalFees.coins,
       orderId: comment,
       timestamp: tx.inMessage.info.createdAt,
@@ -57,23 +57,23 @@ function parseUsdtPayload(tx: Transaction): UsdtTransaction | undefined {
 }
 
 
-export const useUsdtTransactions = (): UsdtTransaction[] => {
+export const usePOODLTransactions = (): POODLTransaction[] => {
   const { walletAddress, tonClient } = useTonConnect();
-  const [transactions, setTransactions] = useState<UsdtTransaction[]>([]);
+  const [transactions, setTransactions] = useState<POODLTransaction[]>([]);
   const intervalId = useRef<number | null>(null);
   const accountSubscriptionService = useRef<AccountSubscriptionService | null>(null);
   const effectRan = useRef(false); // double render in dev mode
 
   const launchSubscriptionService = useCallback(async (tonClient: TonClient, walletAddress: Address) => {
     if (!tonClient || !walletAddress) return;
-    const jettonMaster = tonClient.open(JettonMaster.create(USDT_MASTER_ADDRESS));
+    const jettonMaster = tonClient.open(JettonMaster.create(POODL_MASTER_ADDRESS));
     const address = await jettonMaster.getWalletAddress(INVOICE_WALLET_ADDRESS);
     console.log(walletAddress?.toString());
     accountSubscriptionService.current = new AccountSubscriptionService(tonClient, address, (txs) => {
-      const newUsdtTransactions = txs.map(parseUsdtPayload)
-        .filter((tx): tx is UsdtTransaction => tx?.fromAddress.toString() === walletAddress?.toString());
+      const newPOODLTransactions = txs.map(parsePOODLPayload)
+        .filter((tx): tx is POODLTransaction => tx?.fromAddress.toString() === walletAddress?.toString());
       setTransactions((oldTxs) => [
-        ...newUsdtTransactions,
+        ...newPOODLTransactions,
         ...oldTxs,
       ]);
     });

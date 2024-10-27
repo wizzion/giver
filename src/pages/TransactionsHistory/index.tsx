@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UsdtTransaction } from '@/types/usdt-transaction.ts';
+import { POODLTransaction } from '@/types/POODL-transaction.ts';
 import { useBackButton } from '@/hooks/useBackButton.ts';
-import { useUsdtTransactions } from '@/hooks/useUsdtTransactions.ts';
+import { usePOODLTransactions } from '@/hooks/usePOODLTransactions.ts';
 import { useMainButton } from '@/hooks/useMainButton.ts';
 import { EmptyFilter } from '@/constants/icons.tsx';
 import Header from '@/components/Header';
 import TransactionItem from '@/components/TransactionItem';
 import styles from './styles.module.scss';
 
-const groupByDate = (transactions: UsdtTransaction[]) => {
+const groupByDate = (transactions: POODLTransaction[]) => {
   return transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.timestamp * 1000).toISOString().split('T')[0]; // Converting timestamp to date string (yyyy-mm-dd)
     if (!acc[date]) {
@@ -17,13 +17,13 @@ const groupByDate = (transactions: UsdtTransaction[]) => {
     }
     acc[date].push(transaction);
     return acc;
-  }, {} as Record<string, UsdtTransaction[]>);
+  }, {} as Record<string, POODLTransaction[]>);
 };
 
 const Transaction = () => {
   const navigate = useNavigate();
   useBackButton();
-  const transactions = useUsdtTransactions();
+  const transactions = usePOODLTransactions();
   const isEmpty = !transactions.length;
 
   const groupedTransactions = useMemo(() => groupByDate(transactions), [transactions]);

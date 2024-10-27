@@ -1,5 +1,8 @@
 @import 'src/assets/styles/helpers/all';
 
+$danger600: #e74c3c; // Example color, replace with the actual value
+$danger700: red;
+
 .card {
   background-color: $neutral800;
   border-radius: 6px;
@@ -30,22 +33,20 @@
     @include caption($neutral400);
   }
 
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
+  .poodlImage {
+    width: 25px;
+    height: 25px;
+  }
 
-    .button {
-      padding: 6px;
-    }
+  .removeButton {
+    padding: 6px 12px;
+    background-color: $danger600;
+    color: white;
+    border-radius: 4px;
 
-    .quantity {
-      @include subtitle-l();
-      text-align: center;
-      width: 24px;
+    &:hover {
+      background-color: $danger700;
     }
   }
 }
-
 

@@ -80,7 +80,8 @@ export class AccountSubscriptionService {
     };
 
     // fetch updates every 10 seconds
-    const intervalId = setInterval(tick, 10 * 1000);
+	  //const intervalId = setInterval(tick, 10 * 1000);
+	  const intervalId = setInterval(tick, 10 * 1000) as unknown as number;
     tick();
 
     return intervalId;

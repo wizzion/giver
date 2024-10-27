@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { UsdtTransaction } from '@/types/usdt-transaction.ts';
-import { calculateUsdFromUsdt } from '@/helpers/common-helpers.ts';
+import { POODLTransaction } from '@/types/POODL-transaction.ts';
+import { calculatePOODLFromPOODL } from '@/helpers/common-helpers.ts';
 import { useUtils } from '@telegram-apps/sdk-react';
 import { useTonConnect } from '@/hooks/useTonConnect.ts';
 import { CHAIN } from '@tonconnect/ui-react';
@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 
 
 type Props = {
-  tx: UsdtTransaction
+  tx: POODLTransaction
 }
 
 const TransactionItem = ({ tx }: Props) => {
@@ -26,7 +26,7 @@ const TransactionItem = ({ tx }: Props) => {
           </button>
           <div className={clsx(styles.label, { [styles.failed]: tx.status === 'failed' })}>{tx.status}</div>
         </div>
-        <p>Price: ${calculateUsdFromUsdt(tx.usdtAmount).toString()}</p>
+        <p>Price: ${calculatePOODLFromPOODL(tx.POODLAmount).toString()}</p>
       </div>
     </div>
   );

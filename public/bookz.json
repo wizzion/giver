@@ -1,0 +1,57 @@
+[{	"id":"1564",
+	"name":"The Red Book",
+	"description":"First Edition / First print-out of C.G.Jung's 'Red Book'.",
+	"price":77777777,
+	"image":"https://images.thalia.media/00/-/71cc83ad2ed241da996e869b66f568dc/the-red-book-gebundene-ausgabe-c-g-jung-englisch.jpeg"
+},
+{
+	"id":"1565",
+	"name":"Cryptonomicon",
+	"description":"Cult book by Neal Stepehnson which provided the blueprint for what later became known as Bitcoin.",
+	"price":31337,
+	"image":"https://medien.umbreitkatalog.de/bildzentrale_original/978/009/941/0676.jpg"
+},
+{
+	"id":"1566",
+	"name":"Mr. Nice",
+	"description":"Autobiography of Howard Marks, the coolest smuggler of all times.",
+	"price":23232,
+	"image":"https://images.thalia.media/-/BF2000-2000/058b2ff0aef348ebacea0c94a24f2dc0/mr-nice-taschenbuch-howard-marks.jpeg"
+},
+{
+	"id":"1567",
+	"name":"Afgantsy",
+	"description":"A great historiographical treatise about yet another unsuccessful tentative to extend the empire with war & lies.",
+	"price":23232,
+	"image":"https://cdn.waterstones.com/bookjackets/large/9781/8466/9781846680625.jpg"
+},
+{
+	"id":"1568",
+	"name":"So Good They Can't Ignore You",
+	"description":"In this extraordinary eye-opening account, University professor Dr. Newport debunks the long-held traditional notion that 'following your passion' is good career advice. Skill and ability trump passion.",
+	"price":23232,
+	"image":"https://images.thalia.media/00/-/3b1fbcffa2af4d768c909962bd3850ba/so-good-they-can-t-ignore-you-gebundene-ausgabe-cal-newport-englisch.jpeg"
+},
+{
+	"id":"1569",
+	"name":"Lolita",
+	"description":"Vladimir Nabokov's Lolita. Hardcover. Fifteenth impression. (G. P. Putnam's Sons, New York, 1958). Hardcover. No dust jacket.",
+	"price":31337,
+	"image":"https://i.etsystatic.com/24703877/r/il/07ab0e/3255525863/il_fullxfull.3255525863_82o7.jpg"
+},
+{
+	"id":"1570",
+	"name":"Memoires de la Catherine II",
+	"description":"Autobiographical manual for any lady aspiring to become future empress of Russia.",
+	"price":31337,
+	"image":"https://pictures.abebooks.com/inventory/md/md31762191406.jpg"
+},
+{
+	"id":"1571",
+	"name":"Paradise Regained",
+	"description":"The Poetical works of John Milton, Vol. III, with a critical essay By J. Aikin.&nbsp; Baldwin and Son (1801). Hardcover. Includes engravings.",
+	"price":"POODL ton domain",
+	"image":"https://baumhaus.digital/data/img/1571.paradise_regained.jpg"
+}
+]
+
