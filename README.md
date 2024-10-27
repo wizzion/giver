@@ -115,5 +115,9 @@ Here is a sample configuration for specifying a return URL:
 ```
 # Interested ?
 
-Also join the [@giver_eu Telegram group][https://t.me/giver_eu] to get info about future POODL airdrops and/or info about where & how You can pick up Your well-deserved bookz.
+Also join the [@giver_eu Telegram group](https://t.me/giver_eu) to get info about future POODL airdrops and/or info about where & how You can pick up Your well-deserved bookz.
+
+# P.S. WTF is POODL ?
+There is only one POODL. Unchained. Invisible. Pissing on all ledgers worthy of that name.
+
 
